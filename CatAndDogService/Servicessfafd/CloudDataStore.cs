@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
-using Plugin.Connectivity;
+
 
 namespace CatAndDog
 {
-    public class CloudDataStore : IDataStore<Item>
+ /*   public class CloudDataStore : IDataStore<Item>
     {
         HttpClient client;
         IEnumerable<Item> items;
@@ -79,5 +79,5 @@ namespace CatAndDog
 
             return response.IsSuccessStatusCode;
         }
-    }
+    }*/
 }

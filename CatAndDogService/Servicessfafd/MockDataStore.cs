@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CatAndDog
 {
-    public class MockDataStore : IDataStore<Item>
+  /*  public class MockDataStore : IDataStore<Item>
     {
         List<Item> items;
 
@@ -61,5 +61,5 @@ namespace CatAndDog
         {
             return await Task.FromResult(items);
         }
-    }
+    }*/
 }

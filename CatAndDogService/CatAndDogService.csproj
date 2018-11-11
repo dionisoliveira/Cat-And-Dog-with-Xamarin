@@ -6,5 +6,18 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Services\ServiceWrapper.cs" />
+    <Compile Remove="Services\Base\Interface\IBaseService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Base\" />
+    <Folder Include="Conts\" />
+    <Folder Include="Servicessfafd\" />
+    <Folder Include="Services\Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 </Project>
