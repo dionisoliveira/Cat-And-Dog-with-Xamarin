@@ -23,9 +23,9 @@ namespace CatAndDogService.Services
         /// </summary>
         /// <returns>The random list animal.</returns>
         /// <param name="limit">Limit.</param>
-        public async Task<IList<CatModel>> GetRandomListAnimal(int limit=25)
+        public async Task<IList<CatModel>> GetRandomListAnimal(int limit)
         {
-            var result = await Client.GetAsync(string.Format("v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&limit={0}",limit));
+            var result = await ClientRest.GetAsync(string.Format("v1/images/search?size=full&mime_types=jpg&format=json&order=RANDOM&limit={0}",limit));
             if (!result.IsSuccessStatusCode)
                 return null;
 

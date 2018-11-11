@@ -13,7 +13,7 @@ namespace CatAndDogTest
         public async void Test1()
         {
 
-            var result = await dogService.GetRandomListAnimal();
+            var result = await dogService.GetRandomListAnimal(50);
 
             Assert.Equal(50, result.Count);
         }

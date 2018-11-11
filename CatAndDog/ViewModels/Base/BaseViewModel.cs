@@ -2,29 +2,44 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
-using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace CatAndDog
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel<T> : INotifyPropertyChanged
     {
-      //  public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
+        #region Fields
+        ObservableCollection<T> items;
         bool isBusy = false;
+        string title = string.Empty;
+        #endregion
+
+        #region Properties
+        public ObservableCollection<T> Items
+
+        {
+            get { return items; }
+            set { SetProperty(ref items, value); }
+        }
+
+
+
         public bool IsBusy
         {
             get { return isBusy; }
             set { SetProperty(ref isBusy, value); }
         }
 
-        string title = string.Empty;
+       
         public string Title
         {
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+        #endregion
 
+        #region INotifyPropertyChanged
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",
             Action onChanged = null)
@@ -38,7 +53,7 @@ namespace CatAndDog
             return true;
         }
 
-        #region INotifyPropertyChanged
+       
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {

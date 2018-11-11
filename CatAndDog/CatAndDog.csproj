@@ -7,6 +7,9 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
     <Compile Remove="Views\NewItemPage.xaml.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="DomainService\AnimalService.cs" />
+    <Compile Remove="Converter\ConverterAnimal.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -23,11 +26,11 @@
     <EmbeddedResource Remove="Views\NewItemPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\NewItemPage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="Views\AnimalPage.xaml.cs">
-      <DependentUpon>AnimalPage.xaml</DependentUpon>
+      <DependentUpon>CatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\CatPage.cs">
+      <DependentUpon>CatPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

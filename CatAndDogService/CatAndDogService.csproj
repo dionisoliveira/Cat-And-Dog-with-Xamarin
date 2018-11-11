@@ -8,13 +8,16 @@
     <Compile Remove="Class1.cs" />
     <Compile Remove="Services\ServiceWrapper.cs" />
     <Compile Remove="Services\Base\Interface\IBaseService.cs" />
+    <Compile Remove="Services\Interface\IAnimalService.cs" />
+    <Compile Remove="Servicessfafd\CloudDataStore.cs" />
+    <Compile Remove="Servicessfafd\IDataStore.cs" />
+    <Compile Remove="Servicessfafd\MockDataStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Base\" />
     <Folder Include="Conts\" />
-    <Folder Include="Servicessfafd\" />
     <Folder Include="Services\Interface\" />
   </ItemGroup>
   <ItemGroup>

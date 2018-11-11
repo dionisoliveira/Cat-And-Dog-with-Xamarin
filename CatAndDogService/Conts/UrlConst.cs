@@ -5,7 +5,7 @@ namespace CatAndDogService.Conts
     {
 
 
-        public static string CatUrl = "https://api.thedogapi.com/";
-        public static string DogUrl = "https://api.thecatapi.com/";
+        public static string DogUrl  = "https://api.thedogapi.com/";
+        public static string CatUrl = "https://api.thecatapi.com/";
     }
 }

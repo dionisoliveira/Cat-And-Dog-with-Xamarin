@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace CatAndDogService.Services.Interface
 {
-    public interface IAnimalService<T>
+    public interface IAnimalService
     {
-         Task<IList<T>> GetRandomListAnimal(int limit);
+        Task<IList<object>> GetRandomListAnimal(int limit = 0);
     }
 }

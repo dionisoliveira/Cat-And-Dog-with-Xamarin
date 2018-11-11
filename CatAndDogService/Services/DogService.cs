@@ -10,7 +10,8 @@ namespace CatAndDogService.Services
 {
    
     public class DogService : BaseService, IDogService
-        {
+    {
+        
             #region Constructor
             public DogService() : base(UrlConst.DogUrl)
             {
@@ -26,16 +27,18 @@ namespace CatAndDogService.Services
             /// </summary>
             /// <returns>The random list animal.</returns>
             /// <param name="limit">Limit.</param>
-            public async Task<IList<DogModel>> GetRandomListAnimal(int limit =50 )
+            public async Task<IList<DogModel>> GetRandomListAnimal(int limit)
             {
-                var result = await Client.GetAsync(string.Format("search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&limit={0}", limit));
-                if (result.IsSuccessStatusCode)
+            var result = await ClientRest.GetAsync(string.Format("v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&limit={0}", limit));
+                if (!result.IsSuccessStatusCode)
                     return null;
 
                 var content = await result.Content.ReadAsStringAsync();
                 return await Task.Run(() => JsonConvert.DeserializeObject<List<DogModel>>(content));
             }
-            #endregion
-        }
+
+      
+        #endregion
+    }
 
 }

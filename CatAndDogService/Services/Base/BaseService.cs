@@ -8,11 +8,11 @@ namespace CatAndDogService.Services
     public abstract class BaseService
     {
 
-        public HttpClient Client = new HttpClient();
+        public HttpClient ClientRest = new HttpClient();
 
         public BaseService(string baseUrl)
         {
-            Client.BaseAddress = new Uri(baseUrl);
+            ClientRest.BaseAddress = new Uri(baseUrl);
           
         }
 
