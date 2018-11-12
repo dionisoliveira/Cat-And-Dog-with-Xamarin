@@ -42,13 +42,14 @@ namespace CatAndDog
                     break;
             }
 
-       
 
+            catPage.Icon = "tab_feed.png";
+            dogPage.Icon = "tab_feed.png";
             Children.Add(catPage);
             Children.Add(dogPage);
          
 
-            Title = Children[0].Title;
+          
         }
 
         protected override void OnCurrentPageChanged()
