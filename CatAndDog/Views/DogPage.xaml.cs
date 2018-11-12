@@ -6,19 +6,24 @@ namespace CatAndDog
 {
     public partial class DogPage : ContentPage
     {
-        DogViewModel viewModel;
 
+        #region Fields
+        DogViewModel viewModel;
+        #endregion
+
+
+        #region Constructor
         public DogPage()
         {
             InitializeComponent();
 
 
-            BindingContext =viewModel = new DogViewModel();
+            BindingContext = viewModel = new DogViewModel();
 
         }
+        #endregion
 
-       
-      
+        #region Method
 
         protected override void OnAppearing()
         {
@@ -26,11 +31,12 @@ namespace CatAndDog
 
             if (viewModel.Items.Count == 0)
             {
-                Device.BeginInvokeOnMainThread(async ()=>
+                Device.BeginInvokeOnMainThread(async () =>
                 {
                     await viewModel.ExecuteLoadItemsCommand();
                 });
             }
         }
+        #endregion
     }
 }

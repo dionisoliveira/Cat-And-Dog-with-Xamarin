@@ -13,7 +13,7 @@
                       RefreshCommand="{Binding LoadItemsCommand}" 
                       IsPullToRefreshEnabled="true" 
                       IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
-                      CachingStrategy="RecycleElement" >
+                      CachingStrategy="RetainElement" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
