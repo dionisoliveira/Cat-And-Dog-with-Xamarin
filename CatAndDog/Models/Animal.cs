@@ -50,6 +50,12 @@ public class Animal :INotifyPropertyChanged
 
     #region Method
 
+
+    /// <summary>
+    /// Get image animal async
+    /// </summary>
+    /// <returns>The image.</returns>
+    /// <param name="uri">URI.</param>
     private async Task LoadImage(string uri)
     {
         try
